@@ -4,7 +4,7 @@ abstract class ComicsRepository {
 
   Future<Comic?> getLatestComic();
   Future<Comic?> getComicById(int id);
-  void explainCurrentComic();
+  //void explainCurrentComic();
   Future<Comic?> getRandomComic();
   Future<Comic?> getNextComic(int number);
 }

@@ -8,7 +8,7 @@ abstract class PresenterInterface {
   void getNext(int number);
   void getRandomComic();
   Future<Comic?> getComicById( String num);
-  void explainComic();
+  //void explainComic();
   void addFavorite();
   void shareComic();
 }

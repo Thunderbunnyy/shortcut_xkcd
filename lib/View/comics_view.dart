@@ -8,7 +8,13 @@ class ComicsView extends StatefulWidget {
 
 class _HomeState extends State<ComicsView> {
 
-  late ComicPresenter comicPresenter;
+  ComicPresenter? comicPresenter;
+
+  @override
+  void initState() {
+    super.initState();
+
+  }
 
   @override
   Widget build(BuildContext context) {

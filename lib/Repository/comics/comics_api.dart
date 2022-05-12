@@ -1,10 +1,7 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:shortcut_xkcd/Model/Comic.dart';
 import 'package:shortcut_xkcd/Repository/comics/comic_repository.dart';
 import 'package:http/http.dart' as http;
@@ -29,8 +26,6 @@ class ComicsApi extends ComicsRepository{
         _latestComicNum = comic.num!;
       }
       _currentComicNum = _latestComicNum;
-      print('kelma');
-      print(comic.toString());
       return comic;
 
     } else {
@@ -40,13 +35,13 @@ class ComicsApi extends ComicsRepository{
 
   }
 
-  @override
-    void explainCurrentComic() async {
-    final String explainUrl = _explainXkcdUrl + _currentComicNum.toString();
-
-      return await FlutterWebBrowser.openWebPage(url: explainUrl);
-
-  }
+  // @override
+  //   void explainCurrentComic() async {
+  //   final String explainUrl = _explainXkcdUrl + _currentComicNum.toString();
+  //
+  //     return await FlutterWebBrowser.openWebPage(url: explainUrl);
+  //
+  // }
 
   @override
   Future<Comic?> getComicById(int id) async {

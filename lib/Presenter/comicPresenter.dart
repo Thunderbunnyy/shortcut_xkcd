@@ -1,12 +1,12 @@
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:shortcut_xkcd/Model/Comic.dart';
 import 'package:shortcut_xkcd/Presenter/presenterInterface.dart';
 import 'package:shortcut_xkcd/Repository/comics/comic_repository.dart';
+import 'package:shortcut_xkcd/Repository/comics/comics_api.dart';
 
 class ComicPresenter extends PresenterInterface {
 
-  ComicsRepository? comicsRepository;
-  ComicPresenter({this.comicsRepository});
+  ComicsApi? comicsApi;
+  ComicPresenter({this.comicsApi});
 
   Comic? comic;
 
@@ -15,35 +15,36 @@ class ComicPresenter extends PresenterInterface {
     // TODO: implement addFavorite
   }
 
-  @override
-  void explainComic() async {
-    comicsRepository?.explainCurrentComic();
-  }
+  // @override
+  // void explainComic() async {
+  //   comicsApi?.explainCurrentComic();
+  // }
 
   @override
   Future<Comic?> getComicById( String num) async {
 
-    return await comicsRepository?.getComicById(int.parse(num));
+    return await comicsApi?.getComicById(int.parse(num));
   }
 
   @override
   void getLatestComic() async {
-    comic = await comicsRepository?.getLatestComic();
+    comic = await comicsApi?.getLatestComic();
+
   }
 
   @override
   void getNext(int number) async {
-    comic = await comicsRepository?.getNextComic(number);
+    comic = await comicsApi?.getNextComic(number);
   }
 
   @override
   void getRandomComic() async {
-    comic = await comicsRepository?.getRandomComic();
+    comic = await comicsApi?.getRandomComic();
   }
 
   @override
   void loadFirstComic() async {
-    comic = await comicsRepository?.getLatestComic();
+    comic = await comicsApi?.getLatestComic();
   }
 
   @override

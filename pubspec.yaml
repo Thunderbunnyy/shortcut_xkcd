@@ -30,7 +30,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.3
   bottom_navy_bar: ^6.0.0
-  flutter_web_browser: ^0.17.1
 
 
 dev_dependencies:
