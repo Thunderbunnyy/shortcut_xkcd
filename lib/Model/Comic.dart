@@ -1,6 +1,6 @@
 class Comic {
 
-  int? month ;
+  String? month ;
   int? num ;
   String? link;
   String? year;
@@ -37,6 +37,11 @@ class Comic {
         img: json['img'],
         title: json['title'],
         day: json['day']);
+  }
+
+  @override
+  String toString() {
+        return 'comic : ${month}, ${num},${link},${safeTitle}';
   }
 
 
